@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/test/test",
+    "components/common-card/common-card",
+    "components/product-card/product-card",
+    "components/pull-down-loading/pull-down-loading"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "快销清单",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f3f4f6"
+  },
+  "tabBar": {
+    "backgroundColor": "#f8f8f8",
+    "selectedColor": "#00ae6f",
+    "color": "#7f8389",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "resources/toolBar_brandList.png",
+        "selectedIconPath": "resources/toolBar_brandListLight.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "resources/toolBar_mine.png",
+        "selectedIconPath": "resources/toolBar_minelight.png"
+      }
+    ]
+  }
+}

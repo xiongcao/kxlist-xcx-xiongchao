@@ -1,0 +1,55 @@
+.common-card{
+  padding:16rpx 30rpx;
+  background-color:#fff;
+  border-bottom:1rpx solid #e5e5e5;
+  display:flex;
+  align-items:center;
+}
+
+.common-card .image{
+  height:100rpx;
+  width:100rpx;
+  position: relative;
+}
+.common-card .img{
+  height:100rpx;
+  width:100rpx;
+}
+
+.common-card .name {
+  font-size:12pt;
+  margin-left:20rpx;
+  height:100rpx;
+  line-height:100rpx;
+  width:60%;
+  display:block;
+  word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:clip;
+
+}
+
+.common-card .date{
+  width:25%;
+  font-size:28rpx;
+  text-align:right;
+  color:#8e8e93;
+  height:100rpx;
+  line-height:100rpx;
+}
+
+.common-card .invalid{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 100rpx;
+}

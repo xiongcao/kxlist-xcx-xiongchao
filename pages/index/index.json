@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "pull-down-loading": "/components/pull-down-loading/pull-down-loading",
+    "brand-card": "/components/brand-card/brand-card"
+  },
+  "window":{
+    "onReachBottomDistance":100
+  }
+}

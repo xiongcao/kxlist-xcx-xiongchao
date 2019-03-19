@@ -1,0 +1,140 @@
+.content-top{
+  width: 100%;
+  height: 480rpx;
+  padding-top: 120rpx;
+  box-sizing: border-box;
+}
+
+.bg-image{
+  width: 100%;
+  height: 480rpx;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: -1;
+}
+
+.content-top .title{
+  font-size:48rpx;
+  font-weight:500;
+  text-align:center;
+  color:#4a4a4a;
+  height:66rpx;
+  line-height:66rpx;
+  margin-bottom:30rpx;
+
+}
+
+.content-top-search{
+  width: 640rpx;
+  height: 90rpx;
+  line-height:90rpx;
+  margin:0rpx auto;
+  background: #fff;
+  border-radius: 6rpx;
+  padding:0 0 0 30rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.icon-search{
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left:30rpx;
+  height:90rpx;
+}
+
+.icon-search icon{
+  margin-top:22rpx;
+}
+
+.content-top-search .txt{
+  display: inline-block;
+  text-align: center;
+  margin-left: 60rpx;
+  height:90rpx;
+  line-height:90rpx;
+  color: #bebebe;
+  font-size: 36rpx;
+}
+
+.icon-scan{
+  width:80rpx;
+  height:90rpx;
+  line-height:90rpx;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+}
+.icon-scan image{
+  width: 52rpx;
+  height: 52rpx;
+  margin-top: 20rpx;
+}
+
+.content-middle{
+  background: #fff;
+}
+
+.content-middle .content-title,.content-lastInfo .content-title{
+  font-size: 32rpx;
+  padding:14rpx 0 0 20rpx;
+  color:#8e8e93;
+  box-sizing: border-box;
+}
+.content-middle .content-country{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 28rpx;
+  box-sizing: border-box;
+  margin-top: 30rpx;
+}
+
+ .content-country-item{
+  width:156rpx;
+  height:156rpx;
+  border-radius: 4rpx;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+
+.content-country-item image{
+  width: 100%;
+  height: 100%;
+}
+
+.content-country-item .txt{
+  width:156rpx;
+  height:156rpx;
+  line-height: 157rpx;
+  text-align: center;
+  font-size:28rpx;
+  letter-spacing:0.16px;
+  color: #fff;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.content-lastInfo{
+  background: #fff;
+  height: 100%;
+}
+.content-lastInfo .createDate{
+  font-size:16px;
+  color:#4a4a4a;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+  padding-left: 20rpx;
+}
+
+.content-lastInfo .createDate text{
+  color: #00ae6f;
+}

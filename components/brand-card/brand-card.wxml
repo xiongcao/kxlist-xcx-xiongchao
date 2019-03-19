@@ -1,0 +1,11 @@
+<brand-card class="brand-card">
+  <image wx:if="{{proBrand.brandLogo}}" class='img' src='{{ossPath + proBrand.brandLogo}}'></image>
+  <image wx:else class='img' src='/resources/defaultComm.png'></image>
+  <view class="card-right">
+    <view class='brandName' wx:if="{{proBrand.brandName && proBrand.brandNameEN}}">{{proBrand.brandNameEN}}/{{proBrand.brandName}}</view>
+    <view class='brandName' wx:elif="{{proBrand.brandName}}">{{proBrand.brandName}}</view>
+    <view class='brandName' wx:elif="{{proBrand.brandNameEN}}">{{proBrand.brandNameEN}}</view>
+    <view class='brandName' wx:else></view>
+    <view class='brandIntro'>{{proBrand.brandAbout}}</view>
+  </view>
+</brand-card>

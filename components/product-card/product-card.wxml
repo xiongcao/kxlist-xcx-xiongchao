@@ -1,0 +1,14 @@
+<product-card class="product-card">
+  <view class='image'>
+    <image class='img' wx:if="{{proCommodity.commodityImage}}" src="{{ossPath + proCommodity.commodityImage}}"></image>
+    <image class='img' wx:else src="/resources/defaultComm.png"></image>
+  </view>
+  <view class='product-info'>
+    <view class='product-name'>{{proCommodity.commodityName}}</view>
+    <view class='product-code-origin'>
+      <text class='product-barcode'>条码：{{proCommodity.barCode}}</text>
+      <text class='product-origin'>{{proCommodity.origin ? ('产地：' + proCommodity.origin) : ''}}</text>
+    </view>
+    <view class='product-price'>{{proCommodity.prices}}{{proCommodity.priceUnits}}</view>
+  </view>
+</product-card>

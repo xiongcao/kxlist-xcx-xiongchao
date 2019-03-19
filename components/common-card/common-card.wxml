@@ -1,0 +1,9 @@
+<common-card class='common-card'>
+  <view class='image'>
+    <image wx:if="{{proImage}}" class='img' src='{{ossPath + proImage}}'></image>
+    <image wx:else class='img' src='/resources/defaultComm.png'></image>
+    <view wx:if="{{proStatus==2}}" class='invalid'>失效</view>
+  </view>
+  <view class='name'>{{proName}}</view>
+  <view class='date'>{{proDate}}</view>
+</common-card>

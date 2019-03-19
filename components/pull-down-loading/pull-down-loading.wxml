@@ -1,0 +1,4 @@
+<view class="common-loading" hidden="{{!isShow}}">
+  <image src="/resources/loading.gif"></image>
+  <text>加载中</text>
+</view>

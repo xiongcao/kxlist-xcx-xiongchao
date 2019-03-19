@@ -1,0 +1,50 @@
+<view wx:if="{{canIUse}}">
+    <view class='header'>
+        <image src='/resources/logo-min.jpg'></image>
+    </view>
+
+    <view class='content'>
+        <view>申请获取以下权限</view>
+        <text>获得你的公开信息(昵称，头像等)</text>
+    </view>
+
+    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+        授权登录
+    </button>
+</view>
+<view wx:else class='userModule'>
+  <view class='userInfo'>
+    <image src='{{ossPath + userInfo.avatar + M_100}}'></image>
+    <text>{{userInfo.nickname}}</text>
+  </view>
+  <view class='swiper-tab'>
+    <view class="{{currnetIndex == 0 ? 'active' : ''}}" bindtap="changeTab" data-index="0">品牌{{'·'+brandNum}}</view>
+    <view class="{{currnetIndex == 1 ? 'active' : ''}}" bindtap="changeTab" data-index="1">商品{{'·'+commodityNum}}</view>
+    <view class="{{currnetIndex == 2 ? 'active' : ''}}" bindtap="changeTab" data-index="2">最近浏览</view>
+  </view>
+  <swiper class='user-swiper' current="{{currnetIndex}}" bindchange="swiperSlider">
+    <swiper-item>
+      <scroll-view scroll-y lower-threshold="50" bindscrolltolower="brandScroll">
+        <block wx:for="{{brandList}}" wx:item="{{item}}" wx:key="{{index}}">
+          <common-card pro-id="{{item.id}}" pro-name="{{item.name}}" pro-image="{{item.brandLogo}}" pro-status="{{item.status}}"/>
+        </block>
+      </scroll-view>
+      <pull-down-loading is-show="{{!brandLoading}}"/>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y lower-threshold="50" bindscrolltolower="commodityScroll">
+        <block wx:for="{{commodityList}}" wx:item="{{item}}" wx:key="{{index}}">
+          <product-card pro-commodity="{{item}}"/>
+        </block>
+      </scroll-view>
+      <pull-down-loading is-show="{{!commodityLoading}}"/>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y bindscrolltolower="recenScroll">
+        <block wx:for="{{recentList}}" wx:item="{{item}}" wx:key="{{index}}">
+          <common-card pro-id="{{item.id}}" pro-name="{{item.resourceName}}" pro-image="{{item.resourceImage}}" pro-date="{{item.lastModifiedDate}}" pro-status="{{item.status}}"/>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

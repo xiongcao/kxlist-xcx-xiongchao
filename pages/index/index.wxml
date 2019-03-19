@@ -1,0 +1,32 @@
+<view class='home'>
+  <view class='content-top'>
+    <view class='title'>你想了解哪款商品？</view>
+    <image class='bg-image' src='/resources/indexImage.png'></image>
+    <view class='content-top-search' bindtap="goToSearch">
+      <view class='icon-search'><icon size='24px' type="search"></icon></view>
+      <view class='txt'>条码、品牌、名称</view>
+      <view class='icon-scan' catchtap="scanBtn"><image src='/resources/scan.png'></image></view>
+    </view>
+  </view>
+  <view class='content-middle'>
+    <text class='content-title'>按国家和地区查看品牌</text>
+    <view class='content-country'>
+      <block wx:for="{{countryList}}" wx:for-item="item" wx:key="index" >
+        <view class='content-country-item'>
+          <image src='{{item.imgsrc}}'></image>
+          <view class='txt' data-name="{{item.country}}" bindtap='toBrandListPage'>{{item.country}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='content-lastInfo'>
+    <text class='content-title'>最新</text>
+    <block wx:for="{{brandList}}" wx:index="index" wx:key="index" wx:for-item="item">
+      <view class='createDate'>{{item.createdDate}} 新增 <text>{{item.num}}</text> 个品牌</view>
+      <block wx:for="{{item.brands}}" wx:index="i" wx:key="i" wx:for-item="brand">
+        <brand-card pro-brand="{{brand}}"/>
+      </block>
+    </block>
+    <pull-down-loading is-show="{{pullUpLoadComplete}}"/>
+  </view>
+</view>

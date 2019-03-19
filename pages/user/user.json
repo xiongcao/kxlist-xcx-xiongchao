@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "common-card": "/components/common-card/common-card",
+    "product-card": "/components/product-card/product-card",
+    "pull-down-loading": "/components/pull-down-loading/pull-down-loading"
+  },
+  "navigationBarTitleText": "我的",
+  "backgroundColor": "#f3f4f6",
+  "onReachBottomDistance": 50
+}

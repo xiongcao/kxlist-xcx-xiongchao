@@ -1,0 +1,17 @@
+.common-loading {
+  height: 100rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.common-loading image {
+  vertical-align: middle;
+  height: 34rpx;
+  width: 34rpx;
+}
+
+.common-loading text {
+  font-size: 20rpx;
+  vertical-align: middle;
+  margin-left: 8rpx;
+}
