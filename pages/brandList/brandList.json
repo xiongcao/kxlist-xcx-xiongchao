@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "common-card": "/components/common-card/common-card"
+  },
+  "navigationBarTitleText": "品牌库"
+}

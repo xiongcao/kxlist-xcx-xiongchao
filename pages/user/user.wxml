@@ -26,7 +26,7 @@
     <swiper-item>
       <scroll-view scroll-y lower-threshold="50" bindscrolltolower="brandScroll">
         <block wx:for="{{brandList}}" wx:item="{{item}}" wx:key="{{index}}">
-          <common-card pro-id="{{item.id}}" pro-name="{{item.name}}" pro-image="{{item.brandLogo}}" pro-status="{{item.status}}"/>
+          <common-card pro-id="{{item.id}}" pro-name="{{item.brandName}}" pro-name-en="{{item.brandNameEN}}" pro-image="{{item.brandLogo}}" pro-status="{{item.status}}"/>
         </block>
       </scroll-view>
       <pull-down-loading is-show="{{!brandLoading}}"/>

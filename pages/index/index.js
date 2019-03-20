@@ -48,11 +48,11 @@ Page({
     pageNum:0,
     pullUpLoadComplete:false  //上拉加载是否完成
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  onShareAppMessage(){
+    return {
+      title: "快销清单|快消行业效率提升专业工具",
+      path:'/pages/index/index'
+    }
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
@@ -127,9 +127,9 @@ Page({
   },
   toBrandListPage(e){
     let name = e.target.dataset.name;
-    // wx.navigateTo({
-    //   url: '../brandList/branList?location='+name
-    // })
+    wx.navigateTo({
+      url: '../brandList/brandList?location='+name
+    })
   },
   onReachBottom(){
     if (this.data.pullUpLoadComplete){

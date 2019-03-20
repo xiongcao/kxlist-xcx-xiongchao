@@ -27,7 +27,10 @@
   white-space:nowrap;
   overflow:hidden;
   text-overflow:clip;
+}
 
+.common-card .noDate {
+  width: 85%;
 }
 
 .common-card .date{

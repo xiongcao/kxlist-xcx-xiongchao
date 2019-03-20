@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -54,7 +54,14 @@
 				{
 					"id": -1,
 					"name": "品牌卡片",
-					"pathName": "components/brand-card/brand-card"
+					"pathName": "components/brand-card/brand-card",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "品牌列表",
+					"pathName": "pages/brandList/brandList",
+					"query": "location=其他"
 				}
 			]
 		}

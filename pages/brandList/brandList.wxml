@@ -1,0 +1,20 @@
+<view class='brandList'>
+  <view class="country-title">
+    <text class="{{countryName==itm?'hasSel':''}}" wx:for="{{countryList}}" wx:for-item="itm" wx:for-index="idx" bindtap="classifybrandlist" data-i="{{itm}}" wx:key="idx">{{itm}}</text>
+  </view>
+  <view class='brand-content'>
+    <scroll-view  class="brand-list-scroll" scroll-y="true" scroll-into-view="{{into}}">
+      <block wx:for="{{brandContentList}}" wx:key="index" wx:for-item="item">
+        <view class='side' id="{{item.firstLetter == '#' ? 'Test' : item.firstLetter}}">{{item.firstLetter}}</view>
+        <block wx:for="{{item.brandList}}" wx:key="i" wx:for-item="brand">
+          <common-card pro-id="{{brand.id}}" pro-name="{{brand.brandName}}" pro-name-en="{{brand.brandNameEN}}" pro-image="{{brand.brandLogo}}" pro-status="{{brand.status}}"/>
+        </block>
+      </block>
+    </scroll-view>
+  </view>
+  <view class="sidebar">
+    <block wx:for="{{sidebar}}" wx:key="sidebar" wx:for-item="item">
+      <view bindtap='scrollToViewFn' data-id="{{item}}">{{item}}</view>
+    </block>
+  </view>
+</view>

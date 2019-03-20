@@ -1,9 +1,12 @@
-<common-card class='common-card'>
+<common-card class='common-card' data-id="{{proId}}" bindtap="toBrandDetail">
   <view class='image'>
     <image wx:if="{{proImage}}" class='img' src='{{ossPath + proImage}}'></image>
     <image wx:else class='img' src='/resources/defaultComm.png'></image>
     <view wx:if="{{proStatus==2}}" class='invalid'>失效</view>
   </view>
-  <view class='name'>{{proName}}</view>
-  <view class='date'>{{proDate}}</view>
+  <view class='name {{proDate ? "" : "noDate"}}' wx:if="{{proName && proNameEn}}">{{proNameEn}}/{{proName}}</view>
+  <view class='name {{proDate ? "" : "noDate"}}' wx:elif="{{proName}}">{{proName}}</view>
+  <view class='name {{proDate ? "" : "noDate"}}' wx:elif="{{proNameEn}}">{{proNameEn}}</view>
+  <view class='name {{proDate ? "" : "noDate"}}' wx:else></view>
+  <view class='date' wx:if="{{proDate}}">{{proDate}}</view>
 </common-card>

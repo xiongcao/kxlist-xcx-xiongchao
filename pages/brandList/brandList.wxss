@@ -1,0 +1,53 @@
+.country-title{
+  padding-left: 6rpx;
+  background-color: #fff;
+  height: 86rpx;
+  line-height: 86rpx;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.country-title text {
+  font-size: 28rpx;
+  color: #373737;
+  padding: 18rpx 19rpx;
+}
+.hasSel{
+  border-bottom:4rpx solid #09bb07;
+}
+
+.brand-content{
+  position: absolute;
+  top: 86rpx;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 86rpx);
+}
+.brand-content .brand-list-scroll{
+  height: 100%;
+}
+
+.brand-content .side {
+  font-size:10pt;
+  padding-left:20rpx;
+}
+
+/*字母索引工具栏*/
+
+.sidebar {
+  position: fixed;
+  width: 40rpx;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 378px;
+  color: #09bb07;
+}
+
+.sidebar view {
+  font-size: 8pt;
+  height: 32rpx;
+  text-align: center;
+}

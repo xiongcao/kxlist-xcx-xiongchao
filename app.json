@@ -2,10 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/user/user",
-    "pages/test/test",
-    "components/common-card/common-card",
-    "components/product-card/product-card",
-    "components/pull-down-loading/pull-down-loading"
+    "pages/brandList/brandList",
+    "pages/brand/brand"
   ],
   "permission": {
     "scope.userLocation": {

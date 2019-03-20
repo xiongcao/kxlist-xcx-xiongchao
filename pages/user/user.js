@@ -18,6 +18,12 @@ Page({
     recentList:[]
 
   },
+  onShareAppMessage() {
+    return {
+      title: "快销清单|快消行业效率提升专业工具",
+      path: '/pages/user/user'
+    }
+  },
   onLoad: function (options) {
     var that = this
     that.setData({
@@ -148,15 +154,6 @@ Page({
           if(that.data.brandPageIndex!=0){
             brandList = that.data.brandList.concat(brandList);
           }
-          brandList.forEach((o)=>{
-            if (o.brandName && o.brandNameEN){
-              o.name = o.brandNameEN + "/" + o.brandName;
-            } else if (o.brandName){
-              o.name = o.brandName;
-            }else{
-              o.name = o.brandNameEN;
-            }
-          })
           that.setData({
             brandPageIndex: that.data.brandPageIndex + 1,// 分页后自动+1
             brandList: brandList,
