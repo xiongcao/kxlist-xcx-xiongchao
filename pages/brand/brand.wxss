@@ -1,1 +1,238 @@
-/* pages/brand/brand.wxss */
+.brandPoster{
+  width: 100%;
+  height:180rpx;
+  background:#525252;
+  box-sizing:border-box;
+  display: block;
+  background-size: cover;
+  background-position: center;
+}
+
+.brand-brandInfo{
+  position: relative;
+  height: 120rpx;
+  background: #fff;
+}
+
+.brand-brandInfo .brand-logo{
+  position:absolute;
+  top:-60rpx;
+  left:45rpx;
+  height:160rpx;
+  width:160rpx;
+  border:1rpx solid #e5e5e5;
+  border-radius:10rpx;
+
+}
+.brand-brandInfo .brand-brandName{
+  position:absolute;
+  top:20rpx;
+  left:235rpx;
+  font-size:32rpx;
+  width:360rpx;
+  color:#000;
+  height:40rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.brand-brandInfo follow-btn{
+  display: inline-block;
+  position:absolute;
+  top:20rpx;
+  right: 20rpx;
+}
+
+.brand-about{
+  background-color:#fff;
+  box-sizing:border-box;
+  padding:0 20rpx 6rpx 20rpx;
+  border-bottom:1rpx solid #e5e5e5;
+  font-size:10pt;
+}
+
+.brand-about .about-txt{
+  line-height:40rpx;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  transition:max-height 0.2s;
+  -moz-transition:max-height 0.2s;
+  -webkit-transition:max-height 0.2s;
+  -o-transition:max-height 0.2s;
+}
+
+.brand-about .controlText{
+  text-align: center;
+}
+
+.brand-about .controlText image{
+  display:inline-block;
+  width:34rpx;
+  height:34rpx;
+}
+
+/*新加的nav*/
+
+.nav-bar {
+  margin: 4rpx 0 6rpx 0;
+  background-color: #fff;
+  position: relative;
+}
+
+.nav-bar::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.nav-item {
+  float: left;
+  font-size: 28rpx;
+  color: #8e8e93;
+  margin: 24rpx 0;
+  padding: 0 52rpx;
+  border-right: 4rpx solid #f3f4f6;
+}
+
+.nav-icon {
+  float: left;
+  box-sizing: border-box;
+  position: absolute;
+  right: 24rpx;
+  top: 24rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.nav-icon::before {
+  content: "";
+  display: table;
+}
+
+.nav-icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.active {
+  color: #373737;
+}
+
+.commodity-bar,.commodity-card{
+  overflow: hidden;
+  margin-bottom: 110rpx;
+}
+
+.commodity-card product-big-card{
+  float: left;
+  margin-bottom: 20rpx;
+}
+
+.commodity-card product-big-card:nth-child(even){
+  float: right
+}
+
+.noCommdity {
+  padding-top: 100rpx;
+  text-align: center;
+}
+
+.noCommdity  image {
+  width: 134rpx;
+  height: 134rpx;
+}
+
+.noCommdity  view {
+  font-size: 40rpx;
+  font-weight: 500;
+  text-align: center;
+  color: #ababb0;
+  margin-top: 40rpx;
+}
+
+.bottom-btn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height:100rpx;
+  line-height:100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color:#fff;
+  font-size:14px;
+  color:#8e8e93;
+  border-top:0.5px solid #d8d8d8;
+  z-index:100;
+}
+
+.bottom-btn>view{
+  width: 33.3%;
+  text-align: center;
+}
+
+.brand-detail{
+  border-left:2rpx solid #d8d8d8;
+  border-right:2rpx solid #d8d8d8;
+}
+
+.commodity-group{
+  position: relative;
+}
+
+.commodity-group-btn{
+  position:absolute;
+  bottom:120rpx;
+  width:216rpx;
+  background-color:#fff;
+  border:solid 0.5px #d8d8d8;
+  left:16rpx;
+  padding:12rpx;
+  box-sizing:border-box;
+  padding-bottom:4rpx;
+}
+
+.commodity-group-btn:after, .commodity-group-btn:before {
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  top: 100%;
+  position: absolute;
+  width: 0;
+}
+
+.commodity-group-btn:after {
+  border-width: 18rpx;
+  border-top-color: #fff;
+  left: 87rpx;
+}
+
+.commodity-group-btn:before {
+  border-width: 20rpx;
+  border-top-color: #d8d8d8;
+  left: 84rpx;
+}
+
+.commodity-group-btn .group-btn {
+  width:100%;
+  height:76rpx;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding-left:6rpx;
+  background-color:#fff;
+  border-radius:0;
+  padding:0;
+  /* color:#8e8e93; */
+  color:#09bb07;
+  font-size:14px;
+}
+
+.commodity-group .classifyBtn image{
+  width:32rpx;
+  height:28rpx;
+  margin-right:8rpx;
+  position: relative;
+  top: 4rpx;
+}

@@ -1,2 +1,58 @@
-<!--pages/brand/brand.wxml-->
-<text>pages/brand/brand.wxml</text>
+<view class='brand'>
+  <view class="brandPoster" style="background-image:url({{brandInfo.brandPoster ? ossUrl + brandInfo.brandPoster + M_W_800 : ossUrl + brandInfo.brandLogo + M_W_500_BLUR}})"></view>
+  <view class='brand-brandInfo'>
+    <image class='brand-logo' src='{{ossUrl + brandInfo.brandLogo}}'></image>
+    <view class='brand-brandName' wx:if="{{brandInfo.brandName && brandInfo.brandNameEN}}">{{brandInfo.brandNameEN}} / {{brandInfo.brandName}}</view>
+    <view class='brand-brandName' wx:elif="{{brandInfo.brandName}}">{{brandInfo.brandName}}</view>
+    <view class='brand-brandName' wx:elif="{{brandInfo.brandNameEN}}">{{brandInfo.brandNameEN}}</view>
+    <view class='brand-brandName' wx:else></view>
+    <follow-btn pro-is-follow="{{followStatus}}" pro-id="{{brandInfo.id}}"/>
+  </view>
+  <view class='brand-about' bindtap='toggleAbout' wx:if="{{brandInfo.brandAbout}}">
+    <view class='about-txt' style="max-height:{{aboutToggle ? '120rpx' : '1000rpx'}};">{{brandInfo.brandAbout}}</view>
+    <view class='controlText'>
+      <image src="/resources/arrow.png" style="transform: rotate({{aboutToggle ? '0deg' : '180deg'}});"></image>
+    </view>
+  </view>
+  <block wx:if="{{noCommodity}}">
+    <view class="noCommdity">
+      <image src="/resources/noCommodity.png" />
+      <view>没有找到商品哦</view>
+    </view>
+  </block>
+  <block wx:if="{{commodityList.length!=0}}">
+    <view class="nav-bar">
+      <view class="nav-item {{active =='pub'?'active':''}}" data-order="pub" bindtap="commoditySortTaP">综合排序</view>
+      <view class="nav-item {{active =='time'?'active':''}}" data-order="time" bindtap="commoditySortTaP">新品优先</view>
+      <view class="nav-item {{active =='name'?'active':''}}" data-order="name" bindtap="commoditySortTaP">名称排序</view>
+      <view class="nav-icon" bindtap="changeicon">
+        <image src="/resources/{{imgicon}}.png"></image>
+      </view>
+    </view>
+    <view class='commodity-bar' wx:if="{{barOrCard}}">
+      <block wx:for="{{commodityList}}" wx:for-item="item" wx:key="index">
+        <product-card pro-commodity="{{item}}"/>
+      </block>
+    </view>
+    <view class='commodity-card' wx:else>
+      <block wx:for="{{commodityList}}" wx:for-item="item" wx:key="index">
+        <product-big-card pro-commodity="{{item}}"/>
+      </block>
+    </view>
+  </block>
+  <view class='bottom-btn'>
+    <view class='commodity-group'>
+      <view class="classifyBtn" catchtap="commodityGroupTap">
+        <image src="/resources/moreItemIcon.png"></image>
+        <text>商品分组</text>
+      </view>
+      <view class='commodity-group-btn' wx:if="{{showCommodityGroup}}">
+        <view class='group-btn'>全部商品</view>
+      </view>
+    </view>
+    <view class='brand-detail' bindtap='toBrandDetail'>了解品牌</view>
+    <view class='brand-share'>
+      <share-btn/>
+    </view>
+  </view>
+</view>

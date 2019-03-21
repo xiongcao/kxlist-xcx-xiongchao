@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "follow-btn":"/components/follow-btn/follow-btn",
+    "product-card": "/components/product-card/product-card",
+    "product-big-card": "/components/product-big-card/product-big-card",
+    "share-btn": "/components/share-btn/share-btn"
+  }
 }

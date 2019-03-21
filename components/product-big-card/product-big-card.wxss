@@ -1,0 +1,33 @@
+.product-big-card{
+  width:366rpx;
+  background-color:#fff;
+}
+
+.product-big-card .img{
+  height:366rpx;
+}
+
+.product-big-card image{
+  width:100%;
+  height:100%;
+}
+
+.product-big-card .name{
+  font-size:24rpx;
+  color:#000;
+  letter-spacing:0px;
+  text-align:left;
+  position:relative;
+  top:8rpx;
+  height:64rpx;
+  line-height:32rpx;
+  overflow:hidden;
+  padding:0 10rpx;
+  box-sizing:border-box;
+}
+
+.product-big-card .price{
+  font-size:24rpx;
+  color:#09bb07;
+  padding:16rpx 10rpx;
+}

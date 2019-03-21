@@ -1,0 +1,16 @@
+<view class="share-common-btn">
+  <view class="share-btn" catchtap="showBtns">
+    <image src="/resources/shareIcon.png"></image>
+    <text>分享</text>
+  </view>
+  <view class="shareToBtns" hidden='{{!showShareBtn}}'>
+    <button open-type="share">
+      <image src="/resources/wechatIcon.png"></image>
+      <view>微信好友</view>
+    </button>
+    <button bindtap='saveImage' class="friends">
+      <image src="/resources/friendsIcon.png"></image>
+      <view>朋友圈</view>
+    </button>
+  </view>
+</view>

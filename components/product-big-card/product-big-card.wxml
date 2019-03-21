@@ -1,0 +1,8 @@
+<view class='product-big-card'>
+  <view class='img'>
+    <image class='img' wx:if="{{proCommodity.commodityImage}}" src="{{ossPath + proCommodity.commodityImage}}"></image>
+    <image class='img' wx:else src="/resources/defaultComm.png"></image>
+  </view>
+  <view class='name'>{{proCommodity.commodityName}}</view>
+  <view class='price'>{{proCommodity.prices}}{{proCommodity.priceUnits}}</view>
+</view>

@@ -1,0 +1,4 @@
+<view class='follow-btn' bindtap='followTap'>
+  <image src="/resources/{{followImg}}.png"></image>
+  <text>关注</text>
+</view>
