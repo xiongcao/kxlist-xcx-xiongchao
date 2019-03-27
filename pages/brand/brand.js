@@ -4,7 +4,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    canIUse: false, //是否授权登录
     brandId:'',
+    userInfo: app.globalData.userInfo,
     ossUrl: app.globalData.ossPath,
     M_W_800: app.globalData.M_W_800,
     M_W_500_BLUR: app.globalData.M_W_500_BLUR,
@@ -15,10 +17,11 @@ Page({
     categoryIDs:'',
     brandInfo:null,
     commodityList:[],
-    followStatus:false, //关注状态
+    followStatus:false, //关注状态 false:未关注  true：已关注
     noCommodity:false,  // 无商品
     showCommodityGroup:false,
-    showShareBtn:false
+    showShareBtn:false,
+    resourceName:''
   },
   toggleAbout(){
     this.setData({
@@ -69,11 +72,20 @@ Page({
       success: (result) => {
         if (result.code == 0) {
           var obj = result.data
+          let _resourceName = '';
+          if(obj.brandName && obj.brandNameEN){
+            _resourceName = obj.brandNameEN + "/" + obj.obj.brandName;
+          } else if(obj.brandName){
+            _resourceName = obj.brandName
+          } else if (obj.brandNameEN) {
+            _resourceName = obj.brandNameEN
+          }
           this.setData({
             brandInfo: obj,
-            categoryIDs: result.data.categoryIDs
+            categoryIDs: result.data.categoryIDs,
+            resourceName:_resourceName
           });
-          this.getFollswStatus() // 查询是否关注
+          this.data.userInfo && this.getFollswStatus() // 查询是否关注
           this.getCommodityList("serial_number&properties=created_date");  // 获取商品数据
         } else {
           wx.showToast({
@@ -122,14 +134,45 @@ Page({
       }
     })
   },
+  getUserInfo(e) {
+    console.log('父组件授权响应',e);
+    this.setData({
+      canIUse: e.detail.canIUse,
+      userInfo: e.detail.userInfo
+    })
+    app.globalData.canIUse = true;
+    console.log(app.globalData.canIUse);
+    this.getBrandInfo();
+  },
+  toggleAuthorizePage(e){
+    this.setData({
+      canIUse: e.detail.canIUse
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      brandId:options.id
-    })
-    this.getBrandInfo();
+    if(app.globalData.userInfo){  //已授权
+      this.setData({
+        brandId:options.id,
+        canIUse: false,
+        userInfo:app.globalData.userInfo
+      })
+      this.getBrandInfo();
+    }else{ 
+      if (app.globalData.canIUse) {  //取消过授权
+        this.setData({
+          brandId: options.id
+        });
+        this.getBrandInfo();
+      }else{  // 从来没有操作过授权
+        this.setData({
+          brandId: options.id,
+          canIUse: true
+        });
+      }
+    }
   },
   /**
    * 生命周期函数--监听页面显示

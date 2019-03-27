@@ -15,8 +15,8 @@ Page({
     brandList:[],
     brandLoading:true,
     pageSize:10,
-    recentList:[]
-
+    recentList:[],
+    pageType:'user'
   },
   onShareAppMessage() {
     return {
@@ -34,6 +34,9 @@ Page({
   },
   onShow: function () {
     if (app.globalData.userInfo){ //已授权登录
+      this.setData({
+        canIUse:false
+      })
       this.getFollowBrandNum();
       this.getFollowCommodityNum();
       this.getRecentList();
@@ -202,30 +205,15 @@ Page({
       }
     })
   },
-  bindGetUserInfo(e){
-    if (e.detail.userInfo){ //允许授权
-      //获取用户信息
-      app.getUserInfo((userInfo)=>{
-        this.setData({
-          userInfo: userInfo,
-          canIUse:false
-        });
-        this.getFollowBrandNum();
-        this.getFollowCommodityNum();
-        this.getRecentList();
-      });
-    }else{  //拒绝授权
-      wx.showModal({
-        title: '警告',
-        content: '您点击了拒绝授权，将无法进入小程序，请授权之后再进入!!!',
-        showCancel: false,
-        confirmText: '返回',
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击了“返回授权”')
-          }
-        }
+  getUserInfo(e){
+    if (e.detail.userInfo){
+      this.setData({
+        canIUse: e.detail.canIUse,
+        userInfo: e.detail.userInfo
       })
+      this.getFollowBrandNum();
+      this.getFollowCommodityNum();
+      this.getRecentList();
     }
   }
 })

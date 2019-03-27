@@ -1,4 +1,3 @@
-//app.js
 App({
   globalData: {
     requestApi: "https://www.kxlist.com/api/",
@@ -9,7 +8,8 @@ App({
     M_W_500_BLUR: "@!M_W_500_BLUR",
     winHeight:0,
     windowWidth:0,
-    userInfo: null
+    userInfo: null,
+    canIUse:false //  是否授权
   },
   onReachBottom() {
     console.log(123123123)

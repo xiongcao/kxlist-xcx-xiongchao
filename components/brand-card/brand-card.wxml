@@ -1,4 +1,4 @@
-<brand-card class="brand-card" data-id="{{proBrand.id}}" bindtap="toBrandDetail">
+<brand-card class="brand-card" data-id="{{proBrand.brandID}}" bindtap="toBrandDetail">
   <image wx:if="{{proBrand.brandLogo}}" class='img' src='{{ossPath + proBrand.brandLogo}}'></image>
   <image wx:else class='img' src='/resources/defaultComm.png'></image>
   <view class="card-right">
