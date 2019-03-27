@@ -8,7 +8,7 @@
       <image src="/resources/wechatIcon.png"></image>
       <view>微信好友</view>
     </button>
-    <button bindtap='saveImage' class="friends">
+    <button bindtap='saveQRcode' class="friends">
       <image src="/resources/friendsIcon.png"></image>
       <view>朋友圈</view>
     </button>

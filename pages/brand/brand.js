@@ -48,7 +48,7 @@ Page({
   },
   toBrandDetail(){
     wx.navigateTo({
-      url: 'pages/brandDetail/brandDetail',
+      url: 'pages/brandDetail/brandDetail?id='+this.data.brandId,
     })
   },
   commoditySortTaP(e){
@@ -85,7 +85,11 @@ Page({
             categoryIDs: result.data.categoryIDs,
             resourceName:_resourceName
           });
-          this.data.userInfo && this.getFollswStatus() // 查询是否关注
+          if (this.data.userInfo){
+            this.getFollswStatus() // 查询是否关注
+            this.addBrowseRecords() // 添加浏览记录
+
+          }
           this.getCommodityList("serial_number&properties=created_date");  // 获取商品数据
         } else {
           wx.showToast({
@@ -104,6 +108,20 @@ Page({
         this.setData({
           followStatus: res.data
         })
+      }
+    })
+  },
+  addBrowseRecords() {
+    app.requestWithToken({
+      url: '/browseRecords',
+      method:'POST',
+      contentType: 'application/json',
+      data: {
+        "resourceId": this.data.brandId,
+        "resourceType": 1,
+      },
+      success: (result) => {
+        console.log(result)
       }
     })
   },
@@ -184,6 +202,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: this.data.resourceName,
+      path: '/pages/brand/brand?id=' + this.data.brandId
+    }
+  },
+  method:{
   }
 })

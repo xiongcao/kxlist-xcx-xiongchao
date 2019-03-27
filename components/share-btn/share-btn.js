@@ -11,7 +11,12 @@ Component({
   data: {
     showShareBtn:false //隐藏二级按钮
   },
-
+  onShareAppMessage() {
+    return {
+      title: "快销清单|快消行业效率提升专业工具",
+      path: '/pages/index/index'
+    }
+  },
   /**
    * 组件的方法列表
    */
@@ -20,6 +25,9 @@ Component({
       this.setData({
         showShareBtn: !this.data.showShareBtn
       }) 
+    },
+    saveQRcode(){
+
     }
   }
 })
