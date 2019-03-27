@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/user/user",
     "pages/brandList/brandList",
-    "pages/brand/brand"
+    "pages/brand/brand",
+    "pages/search/search"
   ],
   "permission": {
     "scope.userLocation": {

@@ -47,8 +47,8 @@
 				},
 				{
 					"id": 1,
-					"name": "分享按钮",
-					"pathName": "components/share-btn/share-btn",
+					"name": "搜索",
+					"pathName": "pages/search/search",
 					"query": ""
 				},
 				{

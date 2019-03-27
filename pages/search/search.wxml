@@ -1,0 +1,6 @@
+<view class='search'>
+  <view class='search-toolbar'>
+  
+  </view>
+  <view class='search-record'></view>
+</view>
