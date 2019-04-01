@@ -4,7 +4,8 @@
     "pages/user/user",
     "pages/brandList/brandList",
     "pages/brand/brand",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/brandDetail"
   ],
   "permission": {
     "scope.userLocation": {
