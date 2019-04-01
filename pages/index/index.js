@@ -94,7 +94,9 @@ Page({
     })
   },
   goToSearch(){
-    console.log("触摸了搜索框");
+    wx.navigateTo({
+      url: '/pages/search/search'
+    })
   },
   scanBtn(){
     wx.scanCode({

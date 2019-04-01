@@ -74,7 +74,7 @@ Page({
           var obj = result.data
           let _resourceName = '';
           if(obj.brandName && obj.brandNameEN){
-            _resourceName = obj.brandNameEN + "/" + obj.obj.brandName;
+            _resourceName = obj.brandNameEN + "/" + obj.brandName;
           } else if(obj.brandName){
             _resourceName = obj.brandName
           } else if (obj.brandNameEN) {

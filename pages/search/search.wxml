@@ -1,6 +1,46 @@
 <view class='search'>
   <view class='search-toolbar'>
-  
+    <view class="search-input">
+      <icon type="search" size="13"></icon>
+      <input placeholder="条码、品牌、名称" value='{{searchKeywords}}' bindinput="searchInput" bindconfirm="searchTap" maxlength="60" focus></input>
+      <!-- 清空搜索 -->
+      <image class='closeIcon' wx:if="{{isShowCloseBtn}}" bindtap="clearSearch" src="/resources/small_del.png"></image>
+    </view>
+    <!--搜索按钮-->
+    <button class="searchBtn {{searchText ? 'searchBtnActive' : ''}}" disabled="{{searchText ? false : true}}" bindtap="searchTap">搜索</button>
   </view>
-  <view class='search-record'></view>
+  <view class='search-record' wx:if="{{commodityList.length==0 && brandList.length==0}}">
+    <view class="text-sty">
+      <text class="lf">历史搜索</text>
+      <text class="rt" bindtap="clearall">清除</text>
+      <view class="clear"></view>
+    </view>
+    <scroll-view>
+      <view class="recent-view-item" wx:for="{{searchRecordList}}" wx:for-index="idx" wx:for-item="itm" wx:key="idx" bindtap="clickItemSearch" data-keywords="{{itm}}">
+        <text data-keywords="{{itm}}">{{itm}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='search-product-list' wx:else>
+    <view class="swiper-tab clearFix">
+      <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="tabClick">商品</view>
+      <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="tabClick">品牌</view>
+    </view>
+    <swiper class="swiper-box" duration="100" current="{{currentTab}}" bindchange="boxSlide">
+      <swiper-item class="scroll-item">
+        <scroll-view scroll-y lower-threshold="50" bindscrolltolower="commodityScroll">
+          <block wx:for="{{commodityList}}" wx:item="{{item}}" wx:key="{{index}}">
+            <product-card pro-commodity="{{item}}"/>
+          </block>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item class="scroll-item">
+        <scroll-view scroll-y lower-threshold="50">
+          <block wx:for="{{brandList}}" wx:item="{{item}}" wx:key="{{index}}">
+            <common-card pro-id="{{item.id}}" pro-name="{{item.brandName}}" pro-name-en="{{item.brandNameEN}}" pro-image="{{item.brandLogo}}" pro-status="{{item.status}}"/>
+          </block>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
 </view>

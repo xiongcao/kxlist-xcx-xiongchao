@@ -1,0 +1,149 @@
+.search-toolbar {
+  padding: 14rpx 16rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  background-color: #fff;
+  display: flex;
+}
+.search-toolbar .search-input {
+  background: #fff;
+  width: 608rpx;
+  height: 40rpx;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  /*display: inline-block;*/
+  display: flex;
+  /*vertical-align: middle;*/
+  background: #f3f4f6;
+  align-items: flex-start;
+  position: relative;
+}
+
+.search-toolbar .search-input icon {
+  /*float: left;*/
+  margin-top: 8rpx;
+  margin-left: 2%;
+  margin-right: 1%;
+}
+
+.search-toolbar .closeIcon{
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  right: 10rpx;
+  bottom: 15rpx;
+}
+
+.search-toolbar .search-input input {
+  width: 100%;
+  padding-left: 2%;
+  font-size: 12pt;
+  color: #8e8e93;
+  position: relative;
+  top: -4rpx;
+  line-height: 1.4rem;
+  padding-right: 8%;
+}
+
+.search-toolbar .searchBtn {
+  /* margin-left: 6rpx;
+  display: inline-block;
+  vertical-align: middle;
+  width: 84rpx;
+  height: 36rpx;
+  text-align: center;
+  background: #adadad;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+  color: #fff;
+  padding: 10rpx 0; */
+  width:84rpx;
+  height:56rpx;
+  line-height:56rpx;
+  padding:0 10rpx;
+  border-radius:4rpx;
+  font-size:24rpx;
+  color:#fff;
+  background:#adadad;
+  margin-top:2rpx;
+}
+
+.search-toolbar .searchBtnActive {
+  background: #09bb07;
+}
+
+/****************** 搜索列表 **********************/
+.search-record{
+  background: #fff;
+}
+.search-record .recent-view-item {
+  border-bottom: 2rpx solid #f3f3f3;
+  width:100%;
+  height:62rpx;
+  padding:20rpx;
+}
+
+.search-record .text-sty {
+  padding:15rpx 20rpx;
+  font-size:32rpx;
+  color:#8e8e93;
+}
+.search-record .text-sty::after{
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.search-record .text-sty .lf{
+  float: left;
+}
+
+.search-record .text-sty .rt{
+  float: right;
+}
+
+.search-record .text-sty, .guessUlike {
+  background: #fff;
+}
+
+/*没有搜到结果的提示*/
+
+.no-result-tip {
+  font-size: 32rpx;
+  color: #373737;
+  padding: 20rpx 0 40rpx 20rpx;
+  display: inline-block;
+}
+
+/**************** 商品品牌模块 *************/
+.search-product-list .swiper-tab{
+  height:84rpx;
+  font-size:13pt;
+  margin-bottom:16rpx;
+  background-color:white;
+  position:relative;
+  z-index:5;
+  display:flex;
+}
+.search-product-list .swiper-tab-list{
+  padding:15rpx 0;
+  text-align:center;
+  align-items:center;
+  margin:0 6%;
+  box-sizing:border-box;
+  width:50%;
+}
+.search-product-list .swiper-tab-list.on{
+  color:#09bb07;
+  border-bottom:6rpx solid #09bb07;
+}
+
+.search-product-list .swiper-box{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 190rpx);
+}
+
+.search-product-list .swiper-box scroll-view{
+  height: 100%;
+}

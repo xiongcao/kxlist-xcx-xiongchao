@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "common-card": "/components/common-card/common-card",
+    "product-card": "/components/product-card/product-card"
+  }
 }
