@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -52,10 +52,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "品牌卡片",
-					"pathName": "components/brand-card/brand-card",
-					"query": ""
+					"id": 2,
+					"name": "品牌详情",
+					"pathName": "pages/brandDetail/brandDetail",
+					"query": "id=aea7f3b1a02c497e976e839859640f88"
 				},
 				{
 					"id": 3,
