@@ -48,7 +48,7 @@ Page({
   },
   toBrandDetail(){
     wx.navigateTo({
-      url: 'pages/brandDetail/brandDetail?id='+this.data.brandId,
+      url: '/pages/brandDetail/brandDetail?id='+this.data.brandId,
     })
   },
   commoditySortTaP(e){
